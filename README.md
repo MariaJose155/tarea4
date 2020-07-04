@@ -18,7 +18,9 @@ El enunciado nos pide que usemos seno entonces:
 
 
 Lo anterior es lo mismo a <img src="https://render.githubusercontent.com/render/math?math=2\pi ft "> sumarle <img src="https://render.githubusercontent.com/render/math?math=\phi"> y multiplicar la amplitud no por un -1 si no que por un 1.
-2\pi ft
+
+
+
 Donde A = 1 y <img src="https://render.githubusercontent.com/render/math?math=\phi = \pi">
 
 
