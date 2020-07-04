@@ -24,10 +24,11 @@ Lo anterior es lo mismo a <img src="https://render.githubusercontent.com/render/
 Donde A = 1 y <img src="https://render.githubusercontent.com/render/math?math=\phi = \pi">
 
 
-ver graf2 para la modulación
 
 
-ver graf1 para la onda portadora
+<img src=".../master/graf 1" width ="450">
+
+<img src=".../master/graf 2" width ="450">
 
 # punto 2
 Calcular la potencia promedio de la señal modulada generada.
@@ -44,13 +45,26 @@ Para este punto es importante tomar en cuenta que el ruido fue generado de maner
 
 
 
-Para este punto podemos ver las imagenes graf -2,graf -1,graf 0,graf 1,graf 2,graf 3 las diferentes señales de ruido con los cambios de SNR
+Para este punto podemos ver en  las imagenes los diferentes señales de ruido con los cambios de SNR.
+
+<img src=".../master/graf 3 -2" width ="450">
+
+<img src=".../master/graf 3 -1" width ="450">
+
+<img src=".../master/graf 3 0" width ="450">
+
+<img src=".../master/graf 3 1" width ="450">
+
+<img src=".../master/graf 3 -2" width ="450">
 
 # punto 4
 Graficar la densidad espectral de potencia de la señal con el método de Welch (SciPy), antes y después del canal ruidoso.
 
 
-Para este punto ver las imagenes graf 4 y graf 5 para densidad espectral antes y densidad espectral despues.
+
+<img src=".../master/graf 4" width ="450">
+
+<img src=".../master/graf 5" width ="450">
 
 Donde la densidad espectral antes del ruido es la señal limpia y la señal espectral despues es la señal pues efectivamente con ruido.
 
@@ -64,4 +78,7 @@ Se obtuvieron buenos resultados ya que se demoduladoron todos los bits con todos
 Entonces para este punto podemos ver que para cualquier SNR en el rango solicitado que, el error es: 0 y el BER es 0. 
 
 # punto 6
-La gráfica de la relación entre BER y SNR es graf6
+La gráfica de la relación entre BER y SNR es
+
+
+<img src=".../master/graf 6" width ="450">
