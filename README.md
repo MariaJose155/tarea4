@@ -38,6 +38,8 @@ La potencia promedio es : 0.4900009800999702 W
 # punto 3
 
 Simular un canal ruidoso del tipo AWGN (ruido aditivo blanco gaussiano) con una relación señal a ruido (SNR) desde -2 hasta 3 dB.
+
+
 Para este punto es importante tomar en cuenta que el ruido fue generado de manera aleatoria y con una distrinución normal. Las maginitudes que se obtuvieron se le agregaron a la señal modulada.
 
 
@@ -49,6 +51,8 @@ Graficar la densidad espectral de potencia de la señal con el método de Welch 
 
 
 Para este punto ver las imagenes graf 4 y graf 5 para densidad espectral antes y densidad espectral despues.
+
+Donde la densidad espectral antes del ruido es la señal limpia y la señal espectral despues es la señal pues efectivamente con ruido.
 
 # punto 5
 Demodular y decodificar la señal y hacer un conteo de la tasa de error de bits (BER, bit error rate) para cada nivel SNR.
