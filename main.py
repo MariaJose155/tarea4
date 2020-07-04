@@ -37,7 +37,7 @@ tp = np.linspace(0, T, puntos)
 #fase = representa cada uno de los valores posibles de la fase, tantos como estados tenga la señal codificada en banda base multinivel.
 fase = np.pi;
 #tomamos una amplitud de 1
-A = 1;
+A = -1;
 # Creamos la onda portadora
 
 ondaPortadora = A*np.sin(2*np.pi * f * tp+fase)
@@ -46,6 +46,7 @@ ondaPortadora = A*np.sin(2*np.pi * f * tp+fase)
 plt.plot(tp, ondaPortadora)
 plt.title('Onda Portadora')
 plt.xlabel('Tiempo')
+plt.ylabel('amplitud')
 plt.savefig("graf 1")
 plt.cla()
 # Frecuencia del muestreo
@@ -62,9 +63,9 @@ for k, b in enumerate(bits):
   bb = ''.join(map(str,b)) #convertimos a string
   bbb = int(bb) #convertimos a entero
   if bbb == 0:
-    senal[k*puntos:(k+1)*puntos] = -1*(ondaPortadora)
+    senal[k*puntos:(k+1)*puntos] = (ondaPortadora)
   else:
-    senal[k*puntos:(k+1)*puntos] = (bbb*ondaPortadora)
+    senal[k*puntos:(k+1)*puntos] = -1*(bbb*ondaPortadora)
 
 
 #graficamos
@@ -101,6 +102,7 @@ Rx = senal + ruido
 pb = 5
 plt.title('Señal recibida con SNR = 3')
 plt.xlabel('tiempo')
+plt.xlabel('amplitud')
 plt.plot(Rx[0:pb*puntos])
 plt.savefig("graf 3")
 plt.cla()
@@ -149,7 +151,7 @@ fw, PSD = signal.welch(Rx, fs, nperseg=1024)
 plt.title('Densidad espectral de potencia después del canal ruidoso')
 plt.semilogy(fw, PSD)
 plt.xlabel('Hz')
-plt.ylabel('')
+plt.ylabel('Densidad espectral')
 plt.savefig("graf 5")
 plt.cla()
 
@@ -158,6 +160,6 @@ fw, PSD = signal.welch(senal, fs, nperseg=1024)
 plt.title('Densidad espectral de potencia antes del canal ruidoso')
 plt.semilogy(fw, PSD)
 plt.xlabel('Hz')
-plt.ylabel('Densidad espectral de potencia ')
+plt.ylabel('Densidad espectral  ')
 plt.savefig("graf 4")
 plt.cla()
