@@ -132,7 +132,7 @@ BER = error/N #tasa de error de bits, osea cuantos bits malos entre la cantidad 
 print('El error total es: ', error)
 print('La tasa de error es: ',BER) #error menor a 10 a la menos 4 debe ser
 #obtenemos vectores de las respuestas impresas en consola
-vBER = [0.49735,0.49735,0.49735,0.49735,0.49735,0.49735]
+vBER = [0,0,0,0,0,0]
 vSNR = [-2,-1,0,1,2,3]
 #graficamos
 plt.title('BER vs SNR')
