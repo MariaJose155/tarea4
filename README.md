@@ -22,7 +22,7 @@ Lo anterior es lo mismo a <img src="https://render.githubusercontent.com/render/
 
 
 
-Donde A = 1 y <img src="https://render.githubusercontent.com/render/math?math=\phi = \pi">
+Donde A = -1 y <img src="https://render.githubusercontent.com/render/math?math=\phi = \pi">
 
 
 
