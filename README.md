@@ -9,12 +9,12 @@ Crear un esquema de modulación BPSK para los bits presentados. Esto implica asi
 Entonces se tiene lo siguiente:
 
 
-<img src="https://render.githubusercontent.com/render/math?math=Acos[2\pi ft \plus \phi] ">
+<img src="https://render.githubusercontent.com/render/math?math=Acos[2\pi ft + \phi] ">
 
 El enunciado nos pide que usemos seno entonces:
 
 
-<img src="https://render.githubusercontent.com/render/math?math=Asen[2\pi ft \plus \phi] ">
+<img src="https://render.githubusercontent.com/render/math?math=Asen[2\pi ft + \phi] ">
 
 Donde A = 1 y <img src="https://render.githubusercontent.com/render/math?math=\phi = \pi">
 
