@@ -26,9 +26,9 @@ Donde A = 1 y <img src="https://render.githubusercontent.com/render/math?math=\p
 
 
 
-<img src="../master/graf1" width ="450">
+<img src="../master/graf1.png" width ="450">
 
-<img src="../master/graf2" width ="450">
+<img src="../master/graf2.png" width ="450">
 
 # punto 2
 Calcular la potencia promedio de la señal modulada generada.
@@ -47,15 +47,15 @@ Para este punto es importante tomar en cuenta que el ruido fue generado de maner
 
 Para este punto podemos ver en  las imagenes los diferentes señales de ruido con los cambios de SNR.
 
-<img src="../master/graf3-2" width ="450">
+<img src="../master/graf3-2.png" width ="450">
 
-<img src="../master/graf3-1" width ="450">
+<img src="../master/graf3-1.png" width ="450">
 
-<img src="../master/graf30" width ="450">
+<img src="../master/graf30.png" width ="450">
 
-<img src="../master/graf31" width ="450">
+<img src="../master/graf31.png" width ="450">
 
-<img src="../master/graf32" width ="450">
+<img src="../master/graf32.png" width ="450">
 
 <img src="../master/graf33" width ="450">
 
@@ -64,9 +64,9 @@ Graficar la densidad espectral de potencia de la señal con el método de Welch 
 
 
 
-<img src="../master/graf4" width ="450">
+<img src="../master/graf4.png" width ="450">
 
-<img src="../master/graf5" width ="450">
+<img src="../master/graf5.png" width ="450">
 
 Donde la densidad espectral antes del ruido es la señal limpia y la señal espectral despues es la señal pues efectivamente con ruido.
 
@@ -83,4 +83,4 @@ Entonces para este punto podemos ver que para cualquier SNR en el rango solicita
 La gráfica de la relación entre BER y SNR es
 
 
-<img src="../master/graf6" width ="450">
+<img src="../master/graf6.png" width ="450">
