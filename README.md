@@ -57,7 +57,7 @@ Para este punto podemos ver en  las imagenes los diferentes señales de ruido co
 
 <img src="../master/graf32.png" width ="450">
 
-<img src="../master/graf33" width ="450">
+<img src="../master/graf33.png" width ="450">
 
 # punto 4
 Graficar la densidad espectral de potencia de la señal con el método de Welch (SciPy), antes y después del canal ruidoso.
