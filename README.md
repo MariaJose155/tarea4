@@ -77,7 +77,7 @@ Demodular y decodificar la señal y hacer un conteo de la tasa de error de bits 
 Se obtuvieron buenos resultados ya que se demoduladoron todos los bits con todos los SNR.  
 
 
-Entonces para este punto podemos ver que para cualquier SNR en el rango solicitado que, el error es: 0 y el BER es 0. 
+Entonces para este punto podemos ver que para cualquier SNR en el rango solicitado, el error es 0 y el BER es 0. 
 
 # punto 6
 La gráfica de la relación entre BER y SNR es
