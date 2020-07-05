@@ -65,9 +65,31 @@ Graficar la densidad espectral de potencia de la señal con el método de Welch 
 
 
 
+Densidad espectral antes del canal ruidoso:
+
+
+
 <img src="../master/graf4.png" width ="450">
 
-<img src="../master/graf5.png" width ="450">
+
+
+Densidad espectral despues del canal ruidoso para los diferentes SNR:
+
+
+
+<img src="../master/graf5-2.png" width ="450">
+
+<img src="../master/graf5-1.png" width ="450">
+
+<img src="../master/graf50.png" width ="450">
+
+<img src="../master/graf51.png" width ="450">
+
+<img src="../master/graf52.png" width ="450">
+
+<img src="../master/graf53.png" width ="450">
+
+
 
 Donde la densidad espectral antes del ruido es la señal limpia y la señal espectral despues es la señal pues efectivamente con ruido.
 
