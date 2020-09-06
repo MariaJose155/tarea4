@@ -13,7 +13,7 @@ Entonces el front-end tiene las etapas IF e ID que buscan y decodifican varias i
 
 # Conceptos importantes
 
-IPL (programación dinamica) propone: 
+** IPL (programación dinamica) propone: 
 
 -El hardware reorganiza la ejecución de instrucciones.
 
