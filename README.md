@@ -1,109 +1,91 @@
-# tarea4
+# Tarea ILP
 María José Arce Marín
 B60561
+Heillen Sosa
+Darieth Fonseca
+
+# Introducción
+Para estudiar las decisiones de diseño necesarias para implementar la concurrencia ocasionada por el efecto superescalar y las consecuencias de pipelines más profundos. Entonces es de importancia generar una distinción entre front-end y back-end del pipeline.
+Entonces el front-end tiene las etapas IF e ID que buscan y decodifican varias instrucciones al mismo tiempo. Ahora el back-end que tiene las estapas EX,Mem y WB que ejecutan y escriben varias instrucciones de manera simultanea.
 
 
-# punto 1
-Crear un esquema de modulación BPSK para los bits presentados. Esto implica asignar una forma de onda sinusoidal normalizada (amplitud unitaria) para cada bit y luego una concatenación de todas estas formas de onda.
+# Conceptos importantes
+
+IPL (programación dinamica) propone: 
+-El hardware reorganiza la ejecución de instrucciones.
+-Es más poderoso que la programación estática (SW).
+-Elimina el requerimiento de que las instrucciones se ejecuten en el orden del programa.
+-Aprovechar el pipeline al máximo.
+
+Se basa en dos enfoques:
+
+A) Estático: basado en SW
+Entonces tenemos lo siguiente
+LOOP:
+1.LD FO,0(R1)
+2.ADD F4, F0, F2
+3.SD F4,0(R1)
+4.ADDIU R1,R1,#-8
+5.BNE R1,R2,LOOP
+
+Entonces notemos que en la linea 1 y 2 con la dependencia F0 se da un stall (se inserta una burbuja), en la linea 3 con la dependencia  F4 se da un stall y en la linea 4 y 5 con la dependencia R1 se da un stall.
+Entonces podes se puede hacer el siguiente cambio:
+
+1.LD FO,0(R1)
+2.ADDIU R1,R1,#-8
+3.ADD F4, F0, F2
+4.SD F4,8(R1)
+5.BNE R1,R2,LOOP
+Donde el único stall se da en la linea 4 con F4.
+Entonces se detentan dependencias simples en el codigo y se reordena para evitar burbujas.
+
+B) Loop unralling: Aumentar el número de instrucciones relativas al branch para aumantar el número de instrucciones sobre las cuales se detecta paralelismo.
+
+Entonces en general ILP:Entonces se detentan dependencias simples en el codigo y se reordena para evitar burbujas.
+
+OOO (Ejecución fuera de orden):
+La ejecución de las operaciones inicia tan pronto sus operandos esten listos.
+El problema de la ejecución fuera de orden es que existe la posibilidad de introducir Hazards WAR y WAW que no existen en el pipeline con ejecución en orden.
+La solución a este problema es renombrar el registro, separar el concepto de registros de arquitectura y registros físicos.
+
+Registros de Arquitectura:
+Son los disponibles para el compilador. EL compilador no usa registros físicos porque hay N registros físicos y hay un límite de registros que la arquitectura nos permite exponer.
+
+Registros físicos:
+Son los registros en hardware donde se puede almacenar un valor.
+
+Tabla RAT (register alias table):
+Es una tabla donde se lleva el mapeo entre registros de arquitectura y registros físicos.
+
+Tomasulo:
+Es un algoritmo que permite ejecutar instrucciones fuera de orden.
+-Emite las instrucciones en orden del procesador.
+-Determina de donde vienen las operaciones (RF,RS).
+-Obtiene una estacion de reserva.
+-Etiqueta el registro destino.
+Tomasulo(ciclos y restricciones):
+-Capture y Dispath (típicamente no se realizan en el mismo ciclo)
+-Issue y Dispath (típicamente no se realizan en el mismo ciclo)
+-RAT-Write y Issue (observar el issue)
+-Load y store(esto se realiza en orden)
 
 
-Entonces se tiene lo siguiente:
+# insertar ejemplo Tomasulo simple y luego uno más compicado ambos de un ciclo
 
 
 <img src="https://render.githubusercontent.com/render/math?math=-Acos[2\pi ft] ">
 
-El enunciado nos pide que usemos seno entonces:
+
 
 
 <img src="https://render.githubusercontent.com/render/math?math=-Asen[2\pi ft] ">
 
 
-Lo anterior es lo mismo a <img src="https://render.githubusercontent.com/render/math?math=2\pi ft "> sumarle <img src="https://render.githubusercontent.com/render/math?math=\phi"> y multiplicar la amplitud no por un -1 si no que por un 1.
+ <img src="https://render.githubusercontent.com/render/math?math=2\pi ft "> sumarle <img src="https://render.githubusercontent.com/render/math?math=\phi"> 
 
 
 
-Donde A = -1 y <img src="https://render.githubusercontent.com/render/math?math=\phi = \pi">
+ <img src="https://render.githubusercontent.com/render/math?math=\phi = \pi">
 
 
 
-
-<img src="../master/graf1.png" width ="450">
-
-<img src="../master/graf2.png" width ="450">
-
-# punto 2
-Calcular la potencia promedio de la señal modulada generada.
-
-
-La potencia promedio es : 0.4900009800999702 W
-
-# punto 3
-
-Simular un canal ruidoso del tipo AWGN (ruido aditivo blanco gaussiano) con una relación señal a ruido (SNR) desde -2 hasta 3 dB.
-
-
-Para este punto es importante tomar en cuenta que el ruido fue generado de manera aleatoria y con una distrinución normal. Las maginitudes que se obtuvieron se le agregaron a la señal modulada.
-
-
-
-Para este punto podemos ver en  las imagenes los diferentes señales de ruido con los cambios de SNR.
-
-<img src="../master/graf3-2.png" width ="450">
-
-<img src="../master/graf3-1.png" width ="450">
-
-<img src="../master/graf30.png" width ="450">
-
-<img src="../master/graf31.png" width ="450">
-
-<img src="../master/graf32.png" width ="450">
-
-<img src="../master/graf33.png" width ="450">
-
-# punto 4
-Graficar la densidad espectral de potencia de la señal con el método de Welch (SciPy), antes y después del canal ruidoso.
-
-
-
-Densidad espectral antes del canal ruidoso:
-
-
-
-<img src="../master/graf4.png" width ="450">
-
-
-
-Densidad espectral despues del canal ruidoso para los diferentes SNR:
-
-
-
-<img src="../master/graf5-2.png" width ="450">
-
-<img src="../master/graf5-1.png" width ="450">
-
-<img src="../master/graf50.png" width ="450">
-
-<img src="../master/graf51.png" width ="450">
-
-<img src="../master/graf52.png" width ="450">
-
-<img src="../master/graf53.png" width ="450">
-
-
-
-Donde la densidad espectral antes del ruido es la señal limpia y la señal espectral despues es la señal pues efectivamente con ruido.
-
-# punto 5
-Demodular y decodificar la señal y hacer un conteo de la tasa de error de bits (BER, bit error rate) para cada nivel SNR.
-
-
-Se obtuvieron buenos resultados ya que se demoduladoron todos los bits con todos los SNR.  
-
-
-Entonces para este punto podemos ver que para cualquier SNR en el rango solicitado, el error es 0 y el BER es 0. 
-
-# punto 6
-La gráfica de la relación entre BER y SNR es
-
-
-<img src="../master/graf6.png" width ="450">
