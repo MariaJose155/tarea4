@@ -110,6 +110,9 @@ Es una tabla que que posee una cantidad limitada de espacios por tipo de instruc
 
 # insertar ejemplo Tomasulo simple y luego uno más compicado ambos de un ciclo
 
+<img src="../master/graf1.png" width ="450">
+
+<img src="../master/graf2.png" width ="450">
 
 
 # EJEMPLOS
