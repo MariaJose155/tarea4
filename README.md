@@ -7,8 +7,7 @@ Heillen Sosa
 Darieth Fonseca
 
 # INTRODUCCIÓN
-Para estudiar las decisiones de diseño necesarias para implementar la concurrencia ocasionada por el efecto superescalar y las consecuencias de pipelines más profundos. Entonces es de importancia generar una distinción entre front-end y back-end del pipeline.
-Entonces el front-end tiene las etapas IF e ID que buscan y decodifican varias instrucciones al mismo tiempo. Ahora el back-end que tiene las estapas EX,Mem y WB que ejecutan y escriben varias instrucciones de manera simultanea.
+Con este tema se pretende aprender como implementar Tomasulo algoritmo para ejecutar instrucciones fuera de orden haciendo uso de tablas RAT, una cola de instrucciones y Regs. Aplicando esto se pretende eliminar la ejecución en orden (poco eficiente generando burbujas) del programa y en lugar de esto anterior ejecutar instrucciones tan pronto los operandos en la estación de reserva esten listos.
 
 
 # CONCEPTOS 
@@ -25,7 +24,7 @@ Propone:
 
 -Aprovechar el pipeline al máximo.
 
-Se basa en dos enfoques: estático basado en software y dinamico basado en hardwaare
+Se basa en dos enfoques: estático basado en software y dinamico basado en hardware
 
 A) Técnicas estátics (compilador)
 
@@ -61,7 +60,7 @@ Donde el único stall se da en la linea 4 con F4.Entonces se detentan dependenci
 
 B) Loop unralling: Aumentar el número de instrucciones relativas al branch para aumantar el número de instrucciones sobre las cuales se detecta paralelismo.
 
-Entonces en general ILP:Entonces se detentan dependencias simples en el codigo y se reordena para evitar burbujas.
+Entonces en general para ILP: se detentan dependencias simples en el codigo y se reordena para evitar burbujas.
 
 ## OOO (Ejecución fuera de orden):
 
@@ -95,7 +94,7 @@ Es un algoritmo que permite ejecutar instrucciones fuera de orden.
 
 -Etiqueta el registro destino.
 
-Tomasulo(ciclos y restricciones):
+*Tomasulo(ciclos y restricciones):
 
 -Capture y Dispath (típicamente no se realizan en el mismo ciclo)
 
@@ -105,17 +104,19 @@ Tomasulo(ciclos y restricciones):
 
 -Load y store(esto se realiza en orden)
 
+## Estación de reserva:
+
+Es una tabla que que posee una cantidad limitada de espacios por tipo de instrucción y que sirve para esperar a que los operadores de una instrucción dejen de ser un registro y se conviertan en una constante, una vez eso sucede se hace Dispatch y se libera el espacio en la estación de reserva para la siguiente instrucción en la cola.
 
 # insertar ejemplo Tomasulo simple y luego uno más compicado ambos de un ciclo
 
 
-<img src="https://render.githubusercontent.com/render/math?math=-Acos[2\pi ft] ">
 
 # EJEMPLOS
 # QUIZ
 1. Usando el algoritmo Tomasulo, ¿cuando puede ocurrir Dispatch?
 
-R/ Cuando una instrucción se envia a la unidad de reserva y sus operandos ya no son una variable desconocida entonces se le puede hacer Dispatch, eso si, si es una instrucción de tipo Load o Store entonces aunque esten listas deberan esperar su turno, ya que se realizan en orden.
+R/ Cuando una instrucción se envia a la unidad de reserva y sus operandos ya no son un registro entonces se le puede hacer Dispatch, eso si, si es una instrucción de tipo Load o Store entonces aunque esten listas deberan esperar su turno, ya que se realizan en orden.
 
 
 
